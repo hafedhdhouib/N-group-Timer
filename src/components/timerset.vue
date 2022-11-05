@@ -1,11 +1,12 @@
 <template>  
-<div class="row">
-  <div class="col">
+<div class="">
+  <div class="">
       <h1 class="abyath">{{activite}}</h1>
   </div>
 </div>  
-<div class=" row">
-  <div class="Timerset col-12">
+
+<div class="">
+  <div class="Timerset ">
     <div class="base-timer">
       <svg
         class="base-timer__svg"
@@ -146,7 +147,7 @@
   <style scoped>
   .abyath{
     color: white;
-    font-size: 120px;
+    font-size: 100px;
 
   }
   h1{
@@ -154,6 +155,8 @@
 
   }
   .base-timer {
+    margin-left: auto;
+    margin-right: auto;
        position: relative;
        width: 400px;
        height: 400px;
