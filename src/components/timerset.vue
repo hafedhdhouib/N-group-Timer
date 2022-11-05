@@ -1,5 +1,11 @@
-<template>
-    <h1>{{activite}}</h1>
+<template>  
+<div class="row">
+  <div class="col">
+      <h1 class="abyath">{{activite}}</h1>
+  </div>
+</div>  
+<div class=" row">
+  <div class="Timerset col-12">
     <div class="base-timer">
       <svg
         class="base-timer__svg"
@@ -28,6 +34,8 @@
       </svg>
       <span class="base-timer__label">{{ formattedTimeLeft }}</span>
     </div>
+  </div>
+</div>
   </template>
   
   <script>
@@ -135,11 +143,20 @@
   
   </script>
   
-  <style>
+  <style scoped>
+  .abyath{
+    color: white;
+    font-size: 120px;
+
+  }
+  h1{
+    text-align: center;
+
+  }
   .base-timer {
        position: relative;
-       width: 300px;
-       height: 300px;
+       width: 400px;
+       height: 400px;
   }
    .base-timer__svg {
        transform: scaleX(-1);
@@ -172,13 +189,14 @@
   }
    .base-timer__label {
        position: absolute;
-       width: 300px;
-       height: 300px;
+       width: 400px;
+       height: 400px;
        top: 0;
        display: flex;
        align-items: center;
        justify-content: center;
-       font-size: 48px;
+       font-size: 130px;
+       color:white;
   }
    
   </style>
