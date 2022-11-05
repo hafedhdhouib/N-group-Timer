@@ -1,6 +1,7 @@
 <template>
 <div class="container">
-<form class="row g-3 needs-validation" @submit.prevent="add">
+<timereel></timereel>
+  <form class="row g-3 needs-validation" @submit.prevent="add">
   <div class="col-md-4">
     <label for="validationCustom01" class="form-label">temp</label>
     <input type="number" class="form-control" id="validationCustom01" v-model="time" required>
@@ -26,8 +27,10 @@
 @import url(../assets/bootstrap.min.css);
 </style>
 <script>
+import timereel from '../components/timereel.vue'
   import {database}from '../firebase'
 export default{
+  components: { timereel },
   data() {
     return {
       time:0,

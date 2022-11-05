@@ -37,7 +37,11 @@
     </div>
   </div>
 </div>
-  </template>
+<div class="row">
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div> <h2 class="position-absolute bottom-0 end-0">{{timestamp}}</h2> </template>
   
   <script>
   import {database}from '../firebase'
@@ -66,6 +70,7 @@
   
     data() {
       return {
+        timestamp: "",
         time:0,
         timePassed: 0,
         timerInterval: null,
@@ -120,6 +125,7 @@
     },
   
     mounted() {
+      setInterval(this.getNow, 1000);
       database.ref('/').on('value',(data)=>{
       console.log(data.val());
       this.onTimesUp()
@@ -132,6 +138,11 @@
     },
   
     methods: {
+      getNow: function() {
+                    const today = new Date();
+                    const time = today.getHours() + ":" + today.getMinutes() 
+                    this.timestamp = time;
+                },
       onTimesUp() {
         clearInterval(this.timerInterval);
       },
@@ -145,6 +156,10 @@
   </script>
   
   <style scoped>
+h2{
+  color: white;
+  font-size: 60px;
+}
   .abyath{
     color: white;
     font-size: 100px;
