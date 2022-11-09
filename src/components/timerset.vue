@@ -141,7 +141,7 @@
   
     methods: {
       getNow: function() {
-                    return this.test= moment(new Date()).format('h:mm')
+                    return this.test= moment(new Date()).format('HH:mm')
                 },
       onTimesUp() {
         clearInterval(this.timerInterval);
