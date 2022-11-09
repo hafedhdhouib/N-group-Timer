@@ -41,11 +41,12 @@
   <div class="col"></div>
   <div class="col"></div>
   <div class="col"></div>
-</div> <h2 class="position-absolute bottom-0 end-0">{{timestamp}}</h2> </template>
+</div> <h2 class="position-absolute bottom-0 end-0">{{test}}</h2> </template>
   
   <script>
   import {database}from '../firebase'
-  
+  import moment from 'moment'
+
   const FULL_DASH_ARRAY = 283;
   const WARNING_THRESHOLD = 10;
   const ALERT_THRESHOLD = 5;
@@ -70,6 +71,7 @@
   
     data() {
       return {
+        test:0,
         timestamp: "",
         time:0,
         timePassed: 0,
@@ -139,9 +141,7 @@
   
     methods: {
       getNow: function() {
-                    const today = new Date();
-                    const time = today.getHours() + ":" + today.getMinutes() 
-                    this.timestamp = time;
+                    return this.test= moment(new Date()).format('h:mm')
                 },
       onTimesUp() {
         clearInterval(this.timerInterval);
