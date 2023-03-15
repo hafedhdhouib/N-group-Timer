@@ -42,7 +42,8 @@ export default{
       database.ref("/").set(
         {
           activite:this.activite,
-          time:this.time
+          time:this.time,
+          update:Date.now()
         }
       )
     }
